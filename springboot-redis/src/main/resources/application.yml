@@ -1,0 +1,51 @@
+########################################################
+
+###datasource  配置MySQL数据源；
+
+########################################################
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: root
+    max-active: 20
+    max-idle: 8
+    min-idle: 8
+    initial-size: 10
+
+
+
+########################################################
+
+###REDIS (RedisProperties) redis基本配置；
+
+########################################################
+  redis:
+    database: 0     # database name
+    host: 127.0.0.1 # server host1
+#    password:       # server password
+    port: 6379
+    pool:
+      max-active: 8
+      max-idle: 8
+      min-idle: 0
+      max-wait: -1
+
+# name of Redis server
+#spring.redis.sentinel.master=
+# comma-separated list of host:port pairs
+#spring.redis.sentinel.nodes=
+
+########################################################
+### Java Persistence Api 自动进行建表
+########################################################
+  jpa:
+    database: MYSQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.MySQL5Dialect
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+
