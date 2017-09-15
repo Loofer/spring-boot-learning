@@ -23,3 +23,6 @@ hs_err_pid*
 *.iml
 *
 out
+/springboot-freemarker/target
+/springboot-freemarker/*
+/springboot-freemarker/*.iml
